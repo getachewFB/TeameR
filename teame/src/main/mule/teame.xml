@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<configuration-properties doc:name="Configuration properties" doc:id="a09330d3-b9bc-4b50-b2a2-33fc3a545585" file="${env}.yaml" />
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="95709583-785b-4aeb-ac14-2d52f3f59cf6" >
+		<http:listener-connection host="${http.host}" port="${http.port}" />
+	</http:listener-config>
+	<flow name="teameFlow" doc:id="5783cbfc-c526-4e39-b3cf-d55833ee3a7d" >
+		<http:listener doc:name="Listener" doc:id="cf9c762b-1bac-4c17-81de-e799a1892fdd" path="${http.path}" config-ref="HTTP_Listener_config"/>
+		<set-payload value="hello successe !" doc:name="Set Payload" doc:id="137e1811-151e-411b-8bea-b42421ed11b8" />
+	</flow>
+</mule>

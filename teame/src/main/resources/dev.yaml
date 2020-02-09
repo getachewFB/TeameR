@@ -1,0 +1,4 @@
+http:
+  port: "8081"
+  path: "test1"
+  host: "localhost"
